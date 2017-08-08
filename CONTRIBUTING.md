@@ -1,7 +1,7 @@
 # Contributing
 
 If you discover typos, have ideas for improvements or new items to add to the list,
-or, maybe, you want to us to remove somethig, please, feel free to open a pull request or an issue.
+or, maybe, you want to us to remove something, please, feel free to open a pull request or an issue.
 
 Please, try to follow these guidelines when you do so.
 
