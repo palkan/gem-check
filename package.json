@@ -1,7 +1,7 @@
 {
-  "name": "anycable-web",
+  "name": "gemcheck-web",
   "version": "0.0.1",
-  "description": "AnyCable web app",
+  "description": "GemCheck webpage generator",
   "main": "gulpfile.js",
   "private": true,
   "scripts": {
@@ -11,7 +11,7 @@
     "devbuild": "jspm bundle-sfx index build/js/app.dev.js",
     "postinstall": "jspm install"
   },
-  "author": "Vlad Dem <palkan@evl.ms>",
+  "author": "Vladimir Dementyev <palkan@evl.ms>",
   "license": "MIT",
   "devDependencies": {
     "babel-plugin-transform-es2015-modules-systemjs": "^6.8.0",
