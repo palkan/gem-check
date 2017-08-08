@@ -1,10 +1,10 @@
 if env === 'development'
-  script(src="/jspm_packages/system.js", type='text/javascript')
-  script(src="/jspm.config.js", type='text/javascript')
+  script(src="./jspm_packages/system.js", type='text/javascript')
+  script(src="./jspm.config.js", type='text/javascript')
   script(type='text/javascript').
     System.import('index');
 else
-  script(src="/js/app.min.js", type="text/javascript")
+  script(src="./js/app.min.js", type="text/javascript")
 
 block scripts
 
