@@ -1,0 +1,17 @@
+@font-face {
+  font-weight: 400;
+  font-style: normal;
+  font-family: "Stem Text";
+  src: url("./fonts/StemText.woff") format("woff");
+}
+@font-face {
+  font-weight: 700;
+  font-style: normal;
+  font-family: "Stem Text";
+  src: url("./fonts/StemTextBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Fira Code";
+  src: url("./fonts/FiraCode-Regular.woff") format("woff");
+}

@@ -1,0 +1,59 @@
+@keyframes humanoids-blink {
+  0%, 48% {
+    transform: scaleY(1);
+  }
+
+  50% {
+    transform: scaleY(0);
+  }
+
+  52%, 100% {
+    transform: scaleY(1);
+  }
+}
+
+.humanoids {
+  position: absolute;
+  bottom: -10px;
+  width: 150px;
+  height: 60px;
+  margin: 0 auto 0 -10px;
+  font-size: 0;
+
+  circle {
+    transform: scaleY(1);
+    transform-origin: 50%;
+    animation-duration: 8s;
+    animation-name: humanoids-blink;
+    animation-iteration-count: infinite;
+  }
+
+  svg {
+    height: 60px;
+  }
+}
+
+.humanoids__human,
+.humanoids__martian {
+  position: absolute;
+  width: 80px;
+  height: 90px;
+  transition: transform 300ms easeInOutBack;
+  transform: translateY(0);
+
+  &:hover {
+    transform: translateY(-12px);
+  }
+}
+
+.humanoids__martian {
+  left: 0;
+}
+
+.humanoids__human {
+  right: 0;
+
+  circle {
+    animation-delay: 0.5s;
+  }
+}

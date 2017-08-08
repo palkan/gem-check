@@ -1,0 +1,18 @@
+$default-font-fallback: "Arial", sans-serif;
+$default-font: "Stem Text", $default-font-fallback;
+$code-font-fallback: "Menlo", monospace;
+$code-font: "Fira Code", $default-font-fallback;
+
+$default-color: #363636;
+$grey-text: #9e9e9e;
+$red: #ff5e5e;
+$dark-red: #f64242;
+$orange: #f6a623;
+$green: #7ed321;
+$code-green: #1f6526;
+$code-red: #a12a17;
+$grey: #e3e3e3;
+
+$footer-bg: #363636;
+
+$gap-s: 20px;

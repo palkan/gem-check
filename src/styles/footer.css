@@ -1,0 +1,69 @@
+.footer {
+  width: 100%;
+  z-index: 20;
+  padding: 60px;
+  display: flex;
+  justify-content: flex-end;
+  background: $footer-bg;
+  position: relative;
+  overflow: hidden;
+
+  h3 {
+    color: white;
+    font-weight: normal;
+  }
+
+  &--block {
+    color: white;
+    font-size: 14px;
+    position: relative;
+
+    &.legals {
+      color: $grey-text;
+    }
+  }
+
+  &--humanoids {
+    position: absolute;
+    bottom: -70px;
+  }
+}
+
+.copyright {
+  position: relative;
+
+  &:before {
+    content: '©';
+    position: absolute;
+    left: -20px;
+    top: 0;
+    line-height: 10px;
+  }
+}
+
+@media (max-width: 600px) {
+  .footer {
+    flex-direction: column;
+    padding: 60px 30px 30px 30px;
+
+    &--block {
+      margin-bottom: 30px;
+      font-size: 4vw;
+      line-height: 7vw;
+
+      &.legals {
+        align-self: center;
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .copyright {
+    &:before {
+      left: -5vw;
+      line-height: 3vw;
+    }
+  }
+}
+
+@import "humanoids.css";

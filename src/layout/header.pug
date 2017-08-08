@@ -1,0 +1,10 @@
+script(type="text/javascript")
+  | if (sessionStorage.fontsLoaded) {
+  |   document.documentElement.classList.add('fonts-loaded');
+  | }
+
+.nav
+  a.nav--btn(href="https://github.com/palkan/gemcheck")
+    span.nav--btn--icon
+      include ../images/github.svg
+    span CONTRIBUTE
