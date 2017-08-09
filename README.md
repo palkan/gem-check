@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/palkan/gem-check.svg?branch=master)](https://travis-ci.org/palkan/gem-check)
+
 ## About
 
 GemCheck website generator (http://gemcheck.evilmartians.io).
