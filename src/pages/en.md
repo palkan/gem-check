@@ -74,14 +74,14 @@ For example, predicate methods (`smth?`) should return `true`/`false` and not so
 But take a look at this example from Ruby core:
 
 ```ruby
-  1.nonzero?
-  => 1
-  0.nonzero?
-  => nil
-  0.zero?
-  => true
-  1.zero?
-  => false
+1.nonzero?
+=> 1
+0.nonzero?
+=> nil
+0.zero?
+=> true
+1.zero?
+=> false
 ```
 
 Confusing, isn't it?
