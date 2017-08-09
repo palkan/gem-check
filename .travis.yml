@@ -1,17 +1,13 @@
 language: node_js
-
 cache:
   yarn: true
   directories:
     - node_modules
     - jspm_packages
-
 before_script:
   - yarn run build
-
 script:
   - yarn run spellcheck
-
 deploy:
   provider: pages
   skip_cleanup: true
