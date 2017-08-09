@@ -9,7 +9,8 @@
     "watch": "gulp watch",
     "build": "gulp build:prod && jspm bundle-sfx index build/js/app.min.js --minify --skip-source-maps",
     "devbuild": "jspm bundle-sfx index build/js/app.dev.js",
-    "postinstall": "jspm install"
+    "postinstall": "jspm install",
+    "spellcheck": "yaspeller-ci build/index.html"
   },
   "author": "Vladimir Dementyev <palkan@evl.ms>",
   "license": "MIT",
@@ -49,6 +50,7 @@
   "dependencies": {
     "highlight.js": "^9.12.0",
     "markdown-it-checkbox": "^1.1.0",
-    "markdown-it-container": "^2.0.0"
+    "markdown-it-container": "^2.0.0",
+    "yaspeller-ci": "^0.6.0"
   }
 }
