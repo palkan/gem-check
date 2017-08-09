@@ -83,14 +83,12 @@ gulp.task('copy:images', function () {
 });
 
 gulp.task('copy:root', function () {
-  // TODO: add src/CNAME
-  return gulp.src(['src/*.{xml,png,ico,json,svg}'])
+  return gulp.src(['src/*.{xml,png,ico,json,svg}', 'src/CNAME'])
     .pipe(gulp.dest('./build'))
     .pipe(reload({stream: true}));
 });
 
 gulp.task('copy:vendor', function () {
-  // TODO: add src/CNAME
   return gulp.src(['src/vendor/*.{js,css}'])
     .pipe(gulp.dest('./build/vendor'))
     .pipe(reload({stream: true}));
