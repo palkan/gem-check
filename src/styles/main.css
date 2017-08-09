@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 @import "fonts.css";
-@import "reset.css";
+@import "vendor/reset.css";
 @import "vars.css";
 
 html, body {
@@ -89,8 +89,21 @@ input[type="checkbox"] + label {
   cursor: pointer;
   font-weight: normal;
   line-height: 15px;
-  color: $dark-red;
+  color: $martian-green;
   font-weight: bold;
+}
+
+pre {
+  background: $code-bg;
+  color: $code-color;
+  margin-left: -10%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10%;
+  width: 120%;
+  font-feature-settings: "calt" 1;
+  text-rendering: optimizeLegibility;
+  white-space: pre-wrap;
 }
 
 .main {
@@ -139,6 +152,7 @@ input[type="checkbox"] + label {
   display: flex;
   justify-content: flex-end;
   padding: 10px 20px;
+  z-index: 100;
 }
 
 .nav--btn {
@@ -185,7 +199,7 @@ input[type="checkbox"] + label {
   }
 
   h1 {
-    font-size: 14vw;
+    font-size: 12vw;
     line-height: 18vw;
   }
 
@@ -197,6 +211,29 @@ input[type="checkbox"] + label {
   h4 {
     font-size: 2vw;
   }
+
+  .moto {
+    line-height: 7vw;
+  }
+}
+
+@media (max-width: 800px) {
+  .content {
+    padding: 20px;
+    width: 100%;
+  }
+
+  h1 {
+    margin-bottom: 10px;
+    margin-top: 50px;
+  }
+
+  pre {
+    margin-left: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: calc(100% + 40px);
+  }
 }
 
 
@@ -207,7 +244,7 @@ input[type="checkbox"] + label {
   }
 
   h1 {
-    font-size: 14vw;
+    font-size: 12vw;
     line-height: 18vw;
   }
 
@@ -218,6 +255,18 @@ input[type="checkbox"] + label {
 
   h4 {
     font-size: 3vw;
+  }
+
+  pre {
+    word-break: break-all;
+  }
+
+  .nav--btn {
+    padding: 0;
+  }
+
+  .moto {
+    line-height: 10vw;
   }
 
   .mobile-only {

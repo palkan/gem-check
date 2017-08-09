@@ -26,6 +26,8 @@
   &--humanoids {
     position: absolute;
     bottom: -70px;
+    margin-left: 50%;
+    left: -60px;
   }
 }
 
@@ -44,7 +46,7 @@
 @media (max-width: 600px) {
   .footer {
     flex-direction: column;
-    padding: 60px 30px 30px 30px;
+    padding: 30px;
 
     &--block {
       margin-bottom: 30px;
