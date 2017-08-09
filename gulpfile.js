@@ -89,10 +89,18 @@ gulp.task('copy:root', function () {
     .pipe(reload({stream: true}));
 });
 
+gulp.task('copy:vendor', function () {
+  // TODO: add src/CNAME
+  return gulp.src(['src/vendor/*.{js,css}'])
+    .pipe(gulp.dest('./build/vendor'))
+    .pipe(reload({stream: true}));
+});
+
 gulp.task('copy',
   gulp.parallel(
     'copy:images',
     'copy:root',
+    'copy:vendor',
     'copy:fonts'
   )
 );
