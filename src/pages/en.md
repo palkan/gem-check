@@ -138,7 +138,7 @@ end
 
 - [ ] Monkey-patch reasonably
 
-Avoid monkey-patching of core classes. Consider using [Refinements](https://ruby-doc.org/core-2.4.1/doc/syntax/refinements_rdoc.html) instead (see, for example, [database_rewinder](https://github.com/amatsuda/database_rewinder/blob/v0.8.2/lib/database_rewinder/cleaner.rb)).
+Avoid monkey-patching of core classes. Consider using [Refinements](https://ruby-doc.org/core-2.4.1/doc/syntax/refinements_rdoc.html) instead (see, for example, [`database_rewinder`](https://github.com/amatsuda/database_rewinder/blob/v0.8.2/lib/database_rewinder/cleaner.rb)).
 
 Patch other non-core libs using `Module#prepend` (read this exhaustive [StackOverflow answer](https://stackoverflow.com/a/4471202)).
 
@@ -212,7 +212,7 @@ The key idea here is to provide an ability to extend functionality without patch
 
 - [ ] Provide logging functionality (when necessary)
 
-Logging helps people to identify problems but should be _controlable_ (severity levels, custom outputs, (possibly) filtering).
+Logging helps people to identify problems but should be _controllable_ (severity levels, custom outputs, (possibly) filtering).
 
 Avoid `puts` logging.
 
@@ -231,9 +231,9 @@ end
 - [ ] Make configuration flexible
 
 Provide different ways to configure your library: _manually_ thru the code, from YAML files or environmental variables.
-See, for example, [aws-sdk](https://github.com/aws/aws-sdk-ruby#configuration).
+See, for example, [`aws-sdk`](https://github.com/aws/aws-sdk-ruby#configuration).
 
-Integration libraries **must** support [_twelve-factor-able_](https://12factor.net) configuration. You can use [anyway_config] to acomplish this.
+Integration libraries **must** support [_twelve-factor-able_](https://12factor.net) configuration. You can use [anyway_config] to accomplish this.
 
 Use sensible defaults for configuration (e.g. for Redis connection it's good to use `localhost:6379` by default) and environment variables names (e.g. `REDIS_URL` for Redis like [Sidekiq](https://github.com/mperham/sidekiq/blob/v5.0.0/lib/sidekiq/redis_connection.rb#L100-L102) does).
 
@@ -246,7 +246,7 @@ You don't need the whole `active_support` if you only need a couple of patches (
 
 Do not add as a dependency library which is only used in some use-cases (e.g. Rails do not add `redis` as a default dependency, only tells you that you maybe want to add it yourself).
 
-Monitor your dependencies for CVE (see [bundler-audit](https://github.com/rubysec/bundler-audit)).
+Monitor your dependencies for CVE (see [bundler-audit](https://github.com/rubysec/bundler-audit)) or let [DependencyCI](https://dependencyci.com) to do all the work for you.
 
 - [ ] Provide interoperability (if it's possible)
 
@@ -284,9 +284,9 @@ It should be clear to users what's the current state of the project, what versio
 
 Wondering why? Just read the [keepchangelog.com](http://keepachangelog.com/en/1.0.0/).
 
-Looking for an automation? Take a look at [github-changelog-generator](https://github.com/skywinder/github-changelog-generato)  and [loglive](https://github.com/egoist/loglive).
+Looking for an automation? Take a look at [`github-changelog-generator`](https://github.com/skywinder/github-changelog-generato)  and [`loglive`](https://github.com/egoist/loglive).
 
-Your commits history is also a kind of changelog, so use meaningful messages ([git-cop](https://github.com/bkuhlmann/git-cop) can help you with it).
+Your commits history is also a kind of changelog, so use meaningful messages ([`git-cop`](https://github.com/bkuhlmann/git-cop) can help you with it).
 
 - [ ] Provide upgrade notes
 
@@ -306,7 +306,7 @@ Run your tests against `ruby-head`, Rails `master`, whatever – just add it to 
 
 Sooner or later people will try to contribute to your work. Is your development process transparent or it requires a lot of effort to setup?
 
-For example, Rails has a [rails-dev-box](https://github.com/rails/rails-dev-box) to help you to start developing easily.
+For example, Rails has a [`rails-dev-box`](https://github.com/rails/rails-dev-box) to help you to start developing easily.
 
 [Docker](https://www.docker.com) is also a good way to make dependency management simpler.
 
