@@ -104,7 +104,7 @@ Where _N_ is typically equal to 2.
 
 First, kwargs are more readable and do not depend on the order.
 
-Secondly, kwargs [allocate less objects](https://github.com/benoittgt/understand_ruby_memory#why-keywords-arguments-will-create-less-garbage-collected-objects-after-22-answered-).
+Secondly, kwargs [allocate less objects](https://github.com/benoittgt/understand_ruby_memory#why-keywords-arguments-will-create-less-garbage-collected-objects-after-22-answered-) compared with `options = {}` argument.
 
 Example:
 
@@ -213,6 +213,12 @@ The key idea here is to provide an ability to extend functionality without patch
 - [ ] Provide logging functionality (when necessary)
 
 Logging helps people to identify problems but should be _controllable_ (severity levels, custom outputs, (possibly) filtering).
+
+The easiest way to provide flexible logging is to allow users to specify the Logger instance themselves:
+
+```ruby
+GemCheck.logger = Logger.new(STDOUT)
+```
 
 Avoid `puts` logging.
 
