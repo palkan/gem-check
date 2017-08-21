@@ -5,11 +5,11 @@
 Help developers make other developers happier
 </div>
 
-This is the checklist for Ruby gems authors and maintainers to help them build better open-source software.
+This is the checklist for authors and maintainers of Ruby gems to help them build better open-source software.
 
 > Ruby is designed to make programmers happy. –Matz
 
-This document is focused **only** on code aspects: API design, architecture, and documentation (because code is useless without docs). For OSS principles check out, for example, GitHub's [open source guide](https://opensource.guide).
+This document is focused **exclusively** on code aspects: API design, architecture, and documentation (because any code is useless without docs). OSS principles already have a good coverage in GitHub's [open source guide](https://opensource.guide).
 
 ## API Design
 
@@ -17,7 +17,7 @@ This document is focused **only** on code aspects: API design, architecture, and
 
 - [ ] Reduce boilerplate as much as possible
 
-Compare writing the same functionality using `Net::HTTP` vs. [HTTParty]():
+Compare achieving the same result with `Net::HTTP` and [HTTParty]():
 
 ```ruby
 # Net::HTTP get JSON with query string
@@ -34,13 +34,13 @@ puts HTTParty.get('http://example.com/index.json', limit: 10, page: 3)
 
 - [ ] Do not sacrifice flexibility
 
-Do not limit the functionality only to simple cases, i.e. allow making intricate things possible.
+Do not limit the functionality only to simple cases, i.e., allow making intricate things possible.
 
 [HTTParty], for example, still allows to control underlying HTTP engine fully:
 
 ```ruby
 HTTParty.get(
-  'http://example.com/index.json', 
+  'http://example.com/index.json',
   { limit: 10, page: 3 },
   basic_auth: {...},
   headers: {...},
@@ -68,9 +68,9 @@ end
 
 - [ ] Follow the [Principle of least astonishment](https://en.wikipedia.org/wiki/Principle_of_least_astonishment)
 
-Ruby community is mature and there is a lot of best practices. The less people think writing the code with your library the better.
+Ruby community is mature, and there are a lot of best practices. The less people think when using your library, the better.
 
-For example, predicate methods (`smth?`) should return `true`/`false` and not something else (e.g. 0 and 1).
+For example, predicate methods (`smth?`) should return `true`/`false` and not something else (e.g., 0/1).
 But take a look at this example from Ruby core:
 
 ```ruby
@@ -86,7 +86,7 @@ But take a look at this example from Ruby core:
 
 Confusing, isn't it?
 
-Consider another example (see [issue](https://github.com/teachbase/amorail/issues/25)):
+Consider another example (see this [issue](https://github.com/teachbase/amorail/issues/25)):
 
 ```ruby
 # Amorail is an API client
@@ -96,7 +96,7 @@ Amorail::Lead.find ANY_NONEXISTENT_ID
 # nil makes more sense when nothing is found
 ```
 
-Also, check [the story](https://twitter.com/schneems/status/887433898178772996) of the confusing `retries` argument.
+Also, check [the story](https://twitter.com/schneems/status/887433898178772996) of a confusing `retries` argument.
 
 - [ ] Use keyword arguments if you really need more than N arguments
 
@@ -104,7 +104,7 @@ Where _N_ is typically equal to 2.
 
 First, kwargs are more readable and do not depend on the order.
 
-Secondly, kwargs [allocate less objects](https://github.com/benoittgt/understand_ruby_memory#why-keywords-arguments-will-create-less-garbage-collected-objects-after-22-answered-) compared with `options = {}` argument.
+Secondly, kwargs [allocate less objects](https://github.com/benoittgt/understand_ruby_memory#why-keywords-arguments-will-create-less-garbage-collected-objects-after-22-answered-) compared to `options = {}` argument.
 
 Example:
 
@@ -138,7 +138,7 @@ end
 
 - [ ] Monkey-patch reasonably
 
-Avoid monkey-patching of core classes. Consider using [Refinements](https://ruby-doc.org/core-2.4.1/doc/syntax/refinements_rdoc.html) instead (see, for example, [`database_rewinder`](https://github.com/amatsuda/database_rewinder/blob/v0.8.2/lib/database_rewinder/cleaner.rb)).
+Avoid monkey-patching core classes. Consider using [Refinements](https://ruby-doc.org/core-2.4.1/doc/syntax/refinements_rdoc.html) instead (see, for example, [`database_rewinder`](https://github.com/amatsuda/database_rewinder/blob/v0.8.2/lib/database_rewinder/cleaner.rb)).
 
 Patch other non-core libs using `Module#prepend` (read this exhaustive [StackOverflow answer](https://stackoverflow.com/a/4471202)).
 
@@ -146,7 +146,7 @@ Patch other non-core libs using `Module#prepend` (read this exhaustive [StackOve
 
 - [ ] Encourage developers to avoid dangerous behavior
 
-For example, [Minitest] uses long-and-shaming method name to disable random order for tests (` #i_suck_and_my_tests_are_order_dependent!`).
+For example, [Minitest] uses long and shaming method name to disable random order for tests (` #i_suck_and_my_tests_are_order_dependent!`).
 
 Another great idea is to show flashy warnings. Consider this [Sidekiq] example:
 
@@ -154,7 +154,7 @@ Another great idea is to show flashy warnings. Consider this [Sidekiq] example:
 if defined?(::Rails) && Rails.respond_to?(:env) && !Rails.env.test?
   puts("**************************************************")
   puts("⛔️ WARNING: Sidekiq testing API enabled,
-    but this is not the test environment. 
+    but this is not the test environment.
     Your jobs will not go to Redis.")
   puts("**************************************************")
 end
@@ -162,9 +162,9 @@ end
 
 ## Codebase
 
-> Code is written once but read many times
+> Code is written once but read many times.
 
-- [ ] Write code with style
+- [ ] Write code in style
 
 Your code should have _consistent_ style (i.e. naming, formatting, etc.).
 And it would be great to respect [the community's style](https://github.com/bbatsov/ruby-style-guide).
@@ -189,26 +189,26 @@ Which one is more readable?
 
 Coverage makes sense for libraries.
 
-But readable test cases make even more, especially integration scenarios (because they can be used as documentation).
+But readable test cases make even more sense, especially in integration scenarios (because such tests can be used as documentation).
 
 ## Architecture
 
-> Write code for others, not for yourself
+> Write code for others, not for yourself.
 
 - [ ] Adapterize third-party dependencies
 
-For example, [Active Job] is a great abstraction for background jobs, it supports different adapters, and it's easy to build your own.
+For example, [Active Job] is a great abstraction for background jobs: it supports different adapters, and it's easy to build your own.
 
-From the other hand, [Action Cable] code is highly coupled with its server implementation, which makes it impossible to use other WebSocket servers without a bunch of monkey patching (at least, unless [some refactoring](https://github.com/rails/rails/pull/27648) is done).
+On the other hand, [Action Cable] code is tightly coupled with its server implementation. That makes other WebSocket servers impossible to use without a fair amount of monkey-patching (at least, unless [some refactoring](https://github.com/rails/rails/pull/27648) is done).
 
-Whenever you write a library for a particular database, framework or whatever, think beforehand about using it with alternatives.
+Whenever you write a library for a particular database, framework, or something else, think beforehand if it is going to work with alternatives.
 
-- [ ] Keep in mind extensibility
+- [ ] Keep extensibility in mind
 
-There are different ways to build extensible libraries, e.g. by providing _middleware_ (like [Rack], [Faraday] and [Sidekiq]) 
-or _plugins_ (like [Shrine] and [Devise]) functionality.
+There are different ways to build extensible libraries, e.g., by providing _middleware_ (like [Rack], [Faraday] and [Sidekiq])
+or _plugin_ (like [Shrine] and [Devise]) functionality.
 
-The key idea here is to provide an ability to extend functionality without patching and high-coupling.
+The key idea here is to provide an ability to extend functionality by avoiding patching or high coupling.
 
 - [ ] Provide logging functionality (when necessary)
 
@@ -224,7 +224,7 @@ Avoid `puts` logging.
 
 - [ ] Make code testable
 
-Help developers to test the code using your library easily: provide custom matchers (like [Pundit](https://github.com/elabs/pundit#rspec)), testing adapters (like [Active Job](http://edgeguides.rubyonrails.org/active_job_basics.html#job-testing)), mocks (like [Fog](https://github.com/fog/fog#mocks)).
+Help developers to easily test the code that uses your library: provide custom matchers (like [Pundit](https://github.com/elabs/pundit#rspec)), testing adapters (like [Active Job](http://edgeguides.rubyonrails.org/active_job_basics.html#job-testing)), or mocks (like [Fog](https://github.com/fog/fog#mocks)).
 
 Ensure your code can be configured to be less computational-heavy in tests, like [Devise] does:
 
@@ -236,31 +236,31 @@ end
 
 - [ ] Make configuration flexible
 
-Provide different ways to configure your library: _manually_ thru the code, from YAML files or environmental variables.
+Provide different ways to configure your library: _manually_ through the code, from YAML files, or from environmental variables.
 See, for example, [`aws-sdk`](https://github.com/aws/aws-sdk-ruby#configuration).
 
 Integration libraries **must** support [_twelve-factor-able_](https://12factor.net) configuration. You can use [anyway_config] to accomplish this.
 
-Use sensible defaults for configuration (e.g. for Redis connection it's good to use `localhost:6379` by default) and environment variables names (e.g. `REDIS_URL` for Redis like [Sidekiq](https://github.com/mperham/sidekiq/blob/v5.0.0/lib/sidekiq/redis_connection.rb#L100-L102) does).
+Use sensible defaults for configuration (e.g., for Redis connection it's good to use `localhost:6379` by default) and environment variables names (e.g., `REDIS_URL` for Redis, like [Sidekiq](https://github.com/mperham/sidekiq/blob/v5.0.0/lib/sidekiq/redis_connection.rb#L100-L102) does).
 
 - [ ] Manage runtime dependencies carefully
 
-More dependencies – more points of failures, harder upgrades.
+More dependencies–more chances for failure, harder upgrades.
 
 You don't need the whole `rails` if you're only using `active_model`.
 You don't need the whole `active_support` if you only need a couple of patches (consider using ad-hoc refinements instead).
 
-Do not add as a dependency library which is only used in some use-cases (e.g. Rails do not add `redis` as a default dependency, only tells you that you maybe want to add it yourself).
+Do not add library that is only used in some use cases as a dependency (e.g., Rails does not add `redis` as a default dependency, it only suggests that you may add it yourself).
 
-Monitor your dependencies for CVE (see [bundler-audit](https://github.com/rubysec/bundler-audit)) or let [DependencyCI](https://dependencyci.com) to do all the work for you.
+Monitor your dependencies for CVE (see [bundler-audit](https://github.com/rubysec/bundler-audit)) or let [DependencyCI](https://dependencyci.com) do all the work for you.
 
-- [ ] Provide interoperability (if it's possible)
+- [ ] Provide interoperability (if it is possible)
 
-There is more than one major [Ruby implementation](https://en.wikipedia.org/wiki/Ruby_(programming_language)#Alternate_implementations) and at least three popular: MRI, [JRuby](http://jruby.org) and [Rubinius](https://rubinius.com) (and [TruffleRuby](https://github.com/graalvm/truffleruby) is coming). The fact that MRI is much more popular than others doesn't mean you should ditch others' users.
+There is more than one major [Ruby implementation](https://en.wikipedia.org/wiki/Ruby_(programming_language)#Alternate_implementations), and at least three popular: MRI, [JRuby](http://jruby.org) and [Rubinius](https://rubinius.com) (and [TruffleRuby](https://github.com/graalvm/truffleruby) is coming). The fact that MRI is much more popular than others does not mean you should ditch the rest.
 
 [Concurrent Ruby](https://github.com/ruby-concurrency/concurrent-ruby) is an excellent example of interoperability.
 
-You should at least provide the information whether other platforms are supported or not (just add them to your CI and check – that's easy!).
+You should at least provide the information whether other platforms are supported or not (just add them to your CI and check–that's easy!).
 
 ## Documents
 
@@ -268,19 +268,19 @@ You should at least provide the information whether other platforms are supporte
 
 - [ ] Provide at least one form of documentation
 
-It's not always necessary to write a book or even RDocs; _well-written_ Readme could be fair enough (see [awesome-readme](https://github.com/matiassingers/awesome-readme) for examples).
+It is not always necessary to write a book, or even RDocs: _well-written_ Readme could be sufficient (see [awesome-readme](https://github.com/matiassingers/awesome-readme) for examples).
 
-_Provide benchmarks_ if your library is more performant than others in any form (at least tell users how much memory/CPU/time you saved using your solution).
+_Provide benchmarks_ in any form if your library is more performant than others (at least, tell users how much memory/CPU/time can be saved with your solution).
 
 - [ ] Provide examples for both simple and complex scenarios
 
 A good example is much better than documentation.
 
-Provide code snippets, Wiki pages for specific scenarios – just show people how you are using your own code!
+Provide code snippets, Wiki pages for specific scenarios–just show people how you are using your own code!
 
 - [ ] Show the current state of the project
 
-It should be clear to users what's the current state of the project, what versions of software (language itself, dependencies) is supported (you can use badges in your Readme).
+It should be clear to users what is the current state of the project and which versions of software (the language itself, dependencies) are supported (you can use badges in your Readme).
 
 - [ ] Use semantic versioning
 
@@ -290,7 +290,7 @@ It should be clear to users what's the current state of the project, what versio
 
 Wondering why? Just read the [keepchangelog.com](http://keepachangelog.com/en/1.0.0/).
 
-Looking for an automation? Take a look at [`github-changelog-generator`](https://github.com/skywinder/github-changelog-generato)  and [`loglive`](https://github.com/egoist/loglive).
+Looking for an automation? Take a look at [`github-changelog-generator`](https://github.com/skywinder/github-changelog-generato) and [`loglive`](https://github.com/egoist/loglive).
 
 Your commits history is also a kind of changelog, so use meaningful messages ([`git-cop`](https://github.com/bkuhlmann/git-cop) can help you with it).
 
@@ -300,19 +300,19 @@ See, for example, [Hanami](http://hanamirb.org/guides/upgrade-notes/v100/).
 
 ## Misc
 
-> OSS projects that don’t evolve eventually dies. –Matz
+> OSS project that don’t evolve eventually dies. –Matz
 
-- [ ] Make code be up to date with related technologies
+- [ ] Keep code up to date with related technologies
 
 Try to prevent compatibility issues by monitoring dependencies upgrades ([Depfu] could help here).
 
-Run your tests against `ruby-head`, Rails `master`, whatever – just add it to your CI, it's easy!
+Run your tests against `ruby-head`, Rails `master`, whatever–just add it to your CI, it's easy!
 
 - [ ] Make development process less painful
 
-Sooner or later people will try to contribute to your work. Is your development process transparent or it requires a lot of effort to setup?
+Sooner or later people will try to contribute to your work. Is your development process transparent, or does it require a lot of effort to setup?
 
-For example, Rails has a [`rails-dev-box`](https://github.com/rails/rails-dev-box) to help you to start developing easily.
+For example, Rails has a [`rails-dev-box`](https://github.com/rails/rails-dev-box) to help you start developing easily.
 
 [Docker](https://www.docker.com) is also a good way to make dependency management simpler.
 
