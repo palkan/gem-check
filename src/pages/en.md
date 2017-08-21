@@ -316,6 +316,10 @@ For example, Rails has a [`rails-dev-box`](https://github.com/rails/rails-dev-bo
 
 [Docker](https://www.docker.com) is also a good way to make dependency management simpler.
 
+- [ ] Promptly update version of gem at RubyGems
+
+You need to keep version of gem at [RubyGems](https://rubygems.org/) is up-to-date.
+
 [HTTParty]: https://github.com/jnunemaker/httparty
 [Active Job]: http://edgeguides.rubyonrails.org/active_job_basics.html
 [Action Cable]: http://edgeguides.rubyonrails.org/action_cable_overview.html

@@ -34,6 +34,7 @@
     "Adapterize",
     "Redis", 
     "DependencyCI",
+    "RubyGems",
     "JRuby"
   ]
 }
