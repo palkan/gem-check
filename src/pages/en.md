@@ -300,7 +300,7 @@ See, for example, [Hanami](http://hanamirb.org/guides/upgrade-notes/v100/).
 
 ## Misc
 
-> OSS project that don’t evolve eventually dies. –Matz
+> OSS that stops evolution gradually dies. –Matz
 
 - [ ] Keep code up to date with related technologies
 
