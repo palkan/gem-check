@@ -2,7 +2,7 @@
 
 ## About
 
-GemCheck website generator (http://gemcheck.evilmartians.io).
+Gem Check website generator (http://gemcheck.evilmartians.io).
 
 <a href="https://evilmartians.com/">
 <img src="https://evilmartians.com/badges/sponsored-by-evil-martians.svg" alt="Sponsored by Evil Martians" width="236" height="54"></a>
