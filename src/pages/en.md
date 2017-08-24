@@ -17,7 +17,7 @@ This document is focused **exclusively** on code aspects: API design, architectu
 
 - [ ] Reduce boilerplate as much as possible
 
-Compare achieving the same result with `Net::HTTP` and [HTTParty]():
+Compare achieving the same result with `Net::HTTP` and [HTTParty]:
 
 ```ruby
 # Net::HTTP get JSON with query string
