@@ -290,7 +290,7 @@ It should be clear to users what is the current state of the project and which v
 
 Wondering why? Just read the [keepchangelog.com](http://keepachangelog.com/en/1.0.0/).
 
-Looking for an automation? Take a look at [`github-changelog-generator`](https://github.com/skywinder/github-changelog-generato) and [`loglive`](https://github.com/egoist/loglive).
+Looking for an automation? Take a look at [`github-changelog-generator`](https://github.com/skywinder/github-changelog-generator) and [`loglive`](https://github.com/egoist/loglive).
 
 Your commits history is also a kind of changelog, so use meaningful messages ([`git-cop`](https://github.com/bkuhlmann/git-cop) can help you with it).
 
