@@ -136,6 +136,8 @@ def resolve_error(response)
 end
 ```
 
+Avoid using negative words ("bad", "wrong", etc) in error messages. Use neutral words ("incorrect", "unexpected") instead.
+
 - [ ] Monkey-patch reasonably
 
 Avoid monkey-patching core classes. Consider using [Refinements](https://ruby-doc.org/core-2.4.1/doc/syntax/refinements_rdoc.html) instead (see, for example, [`database_rewinder`](https://github.com/amatsuda/database_rewinder/blob/v0.8.2/lib/database_rewinder/cleaner.rb)).
