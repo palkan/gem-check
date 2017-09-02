@@ -180,7 +180,7 @@ def some_kinda_fun a, even = false
 end
 
 def some_kinda_fun(a, even: false)
-  x = flag ? a+1 : a
+  x = even ? a+1 : a
   {x: a, y: x}
 end
 ```
