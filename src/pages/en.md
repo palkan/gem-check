@@ -316,16 +316,18 @@ For example, Rails has a [`rails-dev-box`](https://github.com/rails/rails-dev-bo
 
 [Docker](https://www.docker.com) is also a good way to make dependency management simpler.
 
-- [ ] Don't forget to update version of gem at RubyGems
+- [ ] Update your version on RubyGems in time
 
-You need to keep version of gem at [RubyGems](https://rubygems.org/) up-to-date. You should use this clarification when make decision about updating:
+Keep version of gem at [RubyGems](https://rubygems.org/) up-to-date with your main repository releases. 
 
-- Security fix – release it!
-- Fixing a regression bug – release it! (Example: Ruby 2.3.3)
-- Adding a feature – wait for next planned release.
-- Fixing a bug that was there for a long time – wait for next planned release.
+When should I bump a version?
 
-***Note**: publish release candidate/beta version prior to releasing a major update.*
+- Security fix
+- Fixing a regression bug (Example: [Ruby 2.3.3](https://www.ruby-lang.org/en/news/2016/11/21/ruby-2-3-3-released/))
+- Adding a feature – wait for next planned release
+- Fixing a bug that was there for a long time – wait for next planned release
+
+It's a good practice to publish RC/beta versions prior to releasing a major update.
 
 [HTTParty]: https://github.com/jnunemaker/httparty
 [Active Job]: http://edgeguides.rubyonrails.org/active_job_basics.html
