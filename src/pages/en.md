@@ -320,7 +320,7 @@ For example, Rails has a [`rails-dev-box`](https://github.com/rails/rails-dev-bo
 
 - [ ] Update your version on RubyGems in time
 
-Keep version of gem at [RubyGems](https://rubygems.org/) up-to-date with your main repository releases. 
+Keep version of a gem at [RubyGems](https://rubygems.org/) up-to-date with your main repository releases.
 
 When should I bump a version?
 
@@ -330,6 +330,8 @@ When should I bump a version?
 - Fixing a bug that was there for a long time – wait for next planned release
 
 It's a good practice to publish RC/beta versions prior to releasing a major update.
+
+You can automate your release process by using, for example, [`gem-release`](https://github.com/svenfuchs/gem-release) or CI services (e.g. [Travis supports](https://docs.travis-ci.com/user/deployment/rubygems/) RubyGems deployments).
 
 [HTTParty]: https://github.com/jnunemaker/httparty
 [Active Job]: http://edgeguides.rubyonrails.org/active_job_basics.html
