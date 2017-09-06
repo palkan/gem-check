@@ -35,6 +35,7 @@
     "Redis", 
     "DependencyCI",
     "RubyGems",
-    "JRuby"
+    "JRuby",
+    "Travis"
   ]
 }
