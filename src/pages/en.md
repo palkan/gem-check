@@ -324,10 +324,14 @@ Keep version of a gem at [RubyGems](https://rubygems.org/) up-to-date with your 
 
 When should I bump a version?
 
+<div class="nested-list">
+
 - Security fix
-- Fixing a regression bug (Example: [Ruby 2.3.3](https://www.ruby-lang.org/en/news/2016/11/21/ruby-2-3-3-released/))
+- Fixing a regression bug (like [Ruby 2.3.3](https://www.ruby-lang.org/en/news/2016/11/21/ruby-2-3-3-released/))
 - Adding a feature – wait for next planned release
 - Fixing a bug that was there for a long time – wait for next planned release
+
+</div>
 
 It's a good practice to publish RC/beta versions prior to releasing a major update.
 

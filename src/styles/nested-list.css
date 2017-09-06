@@ -1,0 +1,6 @@
+.nested-list {
+  & ul {
+    margin: 0;
+    list-style-type: disc;
+  }
+}
