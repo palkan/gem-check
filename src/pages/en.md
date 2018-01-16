@@ -42,8 +42,8 @@ Do not limit the functionality only to simple cases, i.e., allow making intricat
 HTTParty.get(
   'http://example.com/index.json',
   { limit: 10, page: 3 },
-  basic_auth: {...},
-  headers: {...},
+  basic_auth: {},
+  headers: {},
   open_timeout: 2,
   read_timeout: 3
 )
@@ -58,7 +58,7 @@ One common pattern for sensible defaults is the [convention over configuration](
 ```ruby
 class Post < ActiveRecord::Base
   # in the world with no defaults
-  belongs_to :user, foreign_key: :user_id, class_name: "User", primary_key: :id
+  belongs_to :user, foreign_key: :user_id, class_name: 'User', primary_key: :id
   # and with CoC
   belongs_to :user
 end
@@ -75,13 +75,13 @@ But take a look at this example from Ruby core:
 
 ```ruby
 1.nonzero?
-=> 1
+# => 1
 0.nonzero?
-=> nil
+# => nil
 0.zero?
-=> true
+# => true
 1.zero?
-=> false
+# => false
 ```
 
 Confusing, isn't it?
@@ -91,7 +91,7 @@ Consider another example (see this [issue](https://github.com/teachbase/amorail/
 ```ruby
 # Amorail is an API client
 Amorail::Lead.find ANY_NONEXISTENT_ID
-=> false
+# => false
 # why false? we're looking for an object,
 # nil makes more sense when nothing is found
 ```
@@ -154,11 +154,11 @@ Another great idea is to show flashy warnings. Consider this [Sidekiq] example:
 
 ```ruby
 if defined?(::Rails) && Rails.respond_to?(:env) && !Rails.env.test?
-  puts("**************************************************")
+  puts('**************************************************')
   puts("⛔️ WARNING: Sidekiq testing API enabled,
     but this is not the test environment.
     Your jobs will not go to Redis.")
-  puts("**************************************************")
+  puts('**************************************************')
 end
 ```
 
