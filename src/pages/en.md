@@ -112,10 +112,10 @@ Example:
 # From influxdb-ruby
 
 # not-good
-influxdb.write_point(name, data, precision, retention_policy, database)
+influxdb.write_point(data, precision, retention_policy, database)
 
 # much better
-influxdb.write_point(name, data, precision: precision, rp: retention, db: database)
+influxdb.write_point(data, precision: precision, rp: retention, db: database)
 ```
 
 - [ ] Raise meaningful errors
@@ -173,6 +173,7 @@ And it would be great to respect [the community's style](https://github.com/bbat
 
 Compare the following two snippets:
 
+<span style="display:none;"># rubocop:disable all</span>
 ```ruby
 def some_kinda_fun a, even = false
   x = if even then a+1 else a end
@@ -180,10 +181,11 @@ def some_kinda_fun a, even = false
 end
 
 def some_kinda_fun(a, even: false)
-  x = even ? a+1 : a
-  {x: a, y: x}
+  x = even ? a + 1 : a
+  { x: a, y: x }
 end
 ```
+<span style="display:none;"># rubocop:enable all</span>
 
 Which one is more readable?
 
