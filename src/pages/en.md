@@ -348,7 +348,7 @@ When should I bump a version?
 
 It's a good practice to publish RC/beta versions prior to releasing a major update.
 
-You can automate your release process by using, for example, [`gem-release`](https://github.com/svenfuchs/gem-release) or CI services (e.g. [Travis supports](https://docs.travis-ci.com/user/deployment/rubygems/) RubyGems deployments).
+You can automate your release process by using, for example, [`gemsmith`](https://github.com/bkuhlmann/gemsmith) / [`gem-release`](https://github.com/svenfuchs/gem-release) or CI services (e.g. [Travis supports](https://docs.travis-ci.com/user/deployment/rubygems/) RubyGems deployments).
 
 [HTTParty]: https://github.com/jnunemaker/httparty
 [Active Job]: http://edgeguides.rubyonrails.org/active_job_basics.html
