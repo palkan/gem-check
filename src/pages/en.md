@@ -307,7 +307,7 @@ Wondering why? Just read the [keepchangelog.com](http://keepachangelog.com/en/1.
 
 Looking for an automation? Take a look at [`github-changelog-generator`](https://github.com/skywinder/github-changelog-generator) and [`loglive`](https://github.com/egoist/loglive).
 
-Your commits history is also a kind of changelog, so use meaningful messages ([`git-cop`](https://github.com/bkuhlmann/git-cop) can help you with it).
+Your commits history is also a kind of changelog, so, use meaningful messages ([`git-cop`](https://github.com/bkuhlmann/git-cop) can help you with it).
 
 - [ ] Provide upgrade notes
 

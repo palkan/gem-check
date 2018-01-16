@@ -36,6 +36,11 @@
     "DependencyCI",
     "RubyGems",
     "JRuby",
-    "Travis"
+    "Travis",
+    "Active Job",
+    "shaming",
+    "Provide",
+    "code",
+    "CI"
   ]
 }
