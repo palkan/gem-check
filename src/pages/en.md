@@ -297,6 +297,10 @@ It should be clear to users what is the current state of the project and which v
 
 [SemVer](http://semver.org) helps your users to easily upgrade without thinking about breaking changes.
 
+- [ ] Use deprecation messages prior to introducing breaking changes
+
+See, for example, how [Rails](https://github.com/rails/rails/blob/v5.2.0.beta2/railties/lib/rails/commands/server/server_command.rb#L29) do that.
+
 - [ ] Keep a changelog
 
 Wondering why? Just read the [keepchangelog.com](http://keepachangelog.com/en/1.0.0/).
