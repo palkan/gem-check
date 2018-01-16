@@ -276,6 +276,13 @@ It is not always necessary to write a book, or even RDocs: _well-written_ Readme
 
 _Provide benchmarks_ in any form if your library is more performant than others (at least, tell users how much memory/CPU/time can be saved with your solution).
 
+- [ ] Write docs in style
+
+Your documentation contains a lot of code examples? Make sure their have correct syntax and consistent style.
+For example, for Ruby snippets you can use [`rubocop-md`](https://github.com/palkan/rubocop-md).
+
+And don't forget about the language! We use [yaspeller-ci](https://github.com/ai/yaspeller-ci) for that.
+
 - [ ] Provide examples for both simple and complex scenarios
 
 A good example is much better than documentation.
