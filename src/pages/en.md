@@ -289,6 +289,13 @@ A good example is much better than documentation.
 
 Provide code snippets, Wiki pages for specific scenarios–just show people how you are using your own code!
 
+- [ ] Explain how you wrote the code
+
+There are several reasons for that: sharing knowledge and helping others to contribute and debug potential problems easily.
+
+See this great example from [rbspy](https://github.com/rbspy/rbspy/blob/master/ARCHITECTURE.md).
+
+
 - [ ] Show the current state of the project
 
 It should be clear to users what is the current state of the project and which versions of software (the language itself, dependencies) are supported (you can use badges in your Readme).
