@@ -318,7 +318,7 @@ Your commits history is also a kind of changelog, so, use meaningful messages ([
 
 - [ ] Provide upgrade notes
 
-See, for example, [Hanami](http://hanamirb.org/guides/upgrade-notes/v100/).
+See, for example, [Hanami](http://hanamirb.org/guides/1.1/upgrade-notes/v100/).
 
 ## Misc
 
