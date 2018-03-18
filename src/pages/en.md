@@ -326,7 +326,7 @@ See, for example, [Hanami](http://hanamirb.org/guides/1.1/upgrade-notes/v100/).
 
 - [ ] Keep code up to date with related technologies
 
-Try to prevent compatibility issues by monitoring dependencies upgrades ([Depfu] could help here).
+Try to prevent compatibility issues by monitoring dependencies upgrades ([Depfu] or [Dependabot] could help here).
 
 Run your tests against `ruby-head`, Rails `master`, whatever–just add it to your CI, it's easy!
 
@@ -368,3 +368,4 @@ You can automate your release process by using, for example, [`gemsmith`](https:
 [anyway_config]: https://github.com/palkan/anyway_config
 [Minitest]: https://github.com/seattlerb/minitest
 [Depfu]: https://depfu.io
+[Dependabot]: https://dependabot.com
