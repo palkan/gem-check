@@ -302,7 +302,7 @@ It should be clear to users what is the current state of the project and which v
 
 - [ ] Use semantic versioning
 
-[SemVer](http://semver.org) helps your users to easily upgrade without thinking about breaking changes.
+Help your users to easily upgrade without thinking about breaking changes. For example, you can follow [SemVer](http://semver.org) rules, or use your own _semantics_ (just don't forget to explaing it to your users).
 
 - [ ] Use deprecation messages prior to introducing breaking changes
 
