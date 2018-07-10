@@ -45,6 +45,17 @@ h1 {
   margin-bottom: 22px;
 }
 
+.logo {
+  display: flex;
+  margin-bottom: 40px;
+}
+
+.logo svg {
+  width: 240px;
+  height: 180px;
+  margin: 0 auto;
+}
+
 h2 {
   font-size: 40px;
   line-height: 50px;
@@ -116,7 +127,7 @@ pre {
   margin: $gap-s 0;
   padding: $gap-s 0;
   font-weight: bold;
-  color: $dark-red;
+  color: $martian-green;
   width: 100%;
   font-size: 24px;
   text-align: center;
@@ -255,6 +266,15 @@ pre {
 
   h4 {
     font-size: 3vw;
+  }
+
+  .logo {
+    margin-bottom: 20px;
+  }
+
+  .logo svg {
+    width: 160px;
+    height: 120px;
   }
 
   pre {
