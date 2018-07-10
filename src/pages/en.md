@@ -118,9 +118,9 @@ influxdb.write_point(data, precision, retention_policy, database)
 influxdb.write_point(data, precision: precision, rp: retention, db: database)
 ```
 
-- [ ] Raise meaningful errors
+- [ ] Raise meaningful/actionable errors
 
-Always provide error messages: error classes for machines, error messages for humans.
+Always provide error messages: error classes for machines, error messages for humans (check out [this talk](https://confreaks.tv/videos/rubyconf2017-human-errors)).
 
 Use `ArgumentError` if a method is called with wrong or missing arguments.
 
@@ -310,15 +310,21 @@ See, for example, how [Rails](https://github.com/rails/rails/blob/v5.2.0.beta2/r
 
 - [ ] Keep a changelog
 
-Wondering why? Just read the [keepchangelog.com](http://keepachangelog.com/en/1.0.0/).
+Wondering why? Just read the [keepchangelog.com](http://keepachangelog.com/).
 
 Looking for an automation? Take a look at [`github-changelog-generator`](https://github.com/skywinder/github-changelog-generator) and [`loglive`](https://github.com/egoist/loglive).
 
 Your commits history is also a kind of changelog, so, use meaningful messages ([`git-cop`](https://github.com/bkuhlmann/git-cop) can help you with it).
 
+Keeping release notes (e.g. through [GitHub Releases](https://help.github.com/articles/creating-releases/)) is also a good idea. You can automate release notes generation with [Release Drafter](https://github.com/toolmantim/release-drafter).
+
 - [ ] Provide upgrade notes
 
+Make the process of upgrading less painful.
+
 See, for example, [Hanami](http://hanamirb.org/guides/1.1/upgrade-notes/v100/).
+
+Or even better–provide a migration script! Like `graphql-ruby` [did](http://graphql-ruby.org/schema/class_based_api.html#upgrader).
 
 ## Misc
 
