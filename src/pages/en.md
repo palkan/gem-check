@@ -299,7 +299,6 @@ There are several reasons for that: sharing knowledge and helping others to cont
 
 See this great example from [rbspy](https://github.com/rbspy/rbspy/blob/master/ARCHITECTURE.md).
 
-
 - [ ] Show the current state of the project
 
 It should be clear to users what is the current state of the project and which versions of software (the language itself, dependencies) are supported (you can use badges in your Readme).
@@ -366,6 +365,22 @@ When should I bump a version?
 It's a good practice to publish RC/beta versions prior to releasing a major update.
 
 You can automate your release process by using, for example, [`gemsmith`](https://github.com/bkuhlmann/gemsmith) / [`gem-release`](https://github.com/svenfuchs/gem-release) or CI services (e.g. [Travis supports](https://docs.travis-ci.com/user/deployment/rubygems/) RubyGems deployments).
+
+- [ ] Don't let your gem bloat
+
+While it makes a great sense to add to your repository as more documentation and examples as possible, have a huge test suite and development
+guides, it's better not to include this unrelated data to the final package. Be reasonable about your gem content.
+The only essential parts, in the most cases, are basic README, license information, and the source code itself.
+
+Whitelisting gem content protects you from occasional and undesirable "additions" in the future.
+
+```ruby
+Gem::Specification.new do |spec|
+  # ...
+  spec.files = `git ls-files README.md LICENSE.txt lib bin`.split
+  # ...
+end
+```
 
 [HTTParty]: https://github.com/jnunemaker/httparty
 [Active Job]: http://edgeguides.rubyonrails.org/active_job_basics.html
