@@ -173,7 +173,7 @@ end
 - [ ] Write code in style
 
 Your code should have _consistent_ style (i.e. naming, formatting, etc.).
-And it would be great to respect [the community's style](https://github.com/bbatsov/ruby-style-guide).
+And it would be great to respect the community's style: take a look at the [Ruby Style Guide](https://github.com/bbatsov/ruby-style-guide) or the [StandardRB](https://github.com/testdouble/standard) project.
 
 Compare the following two snippets:
 
