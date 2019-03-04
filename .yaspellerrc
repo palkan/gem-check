@@ -43,6 +43,7 @@
     "code",
     "CI",
     "rbspy",
-    "setup"
+    "setup",
+    "StandardRB"
   ]
 }
