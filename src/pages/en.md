@@ -142,6 +142,8 @@ end
 
 Avoid using negative words ("bad", "wrong", etc) in error messages. Use neutral words ("incorrect", "unexpected") instead.
 
+When re-raising exceptions, make sure you're not losing the _cause_: use `raise MyException, "description"` instead of `raise MyException.new("description")` (or use [a _secret_ `:cause` keyword](http://engineering.appfolio.com/appfolio-engineering/2017/12/28/ruby-and-nested-exceptions)).
+
 - [ ] Monkey-patch reasonably
 
 Avoid monkey-patching core classes. Consider using [Refinements](https://ruby-doc.org/core-2.4.1/doc/syntax/refinements_rdoc.html) instead (see, for example, [`database_rewinder`](https://github.com/amatsuda/database_rewinder/blob/v0.8.2/lib/database_rewinder/cleaner.rb)).
