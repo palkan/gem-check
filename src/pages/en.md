@@ -379,7 +379,7 @@ Whitelisting gem content protects you from occasional and undesirable "additions
 ```ruby
 Gem::Specification.new do |spec|
   # ...
-  spec.files = `git ls-files README.md LICENSE.txt lib bin`.split
+  spec.files =  Dir.glob("lib/**/*") + Dir.glob("bin/**/*") + %w[README.md LICENSE.txt CHANGELOG.md]
   # ...
 end
 ```
