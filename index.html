@@ -342,7 +342,7 @@ The only essential parts, in the most cases, are basic README, license informati
 <p>Whitelisting gem content protects you from occasional and undesirable “additions” in the future.</p>
 <pre><code class="language-ruby">Gem::Specification.new <span class="hljs-keyword">do</span> <span class="hljs-params">|spec|</span>
   <span class="hljs-comment"># ...</span>
-  spec.files = <span class="hljs-string">`git ls-files README.md LICENSE.txt lib bin`</span>.split
+  spec.files =  Dir.glob(<span class="hljs-string">"lib/**/*"</span>) + Dir.glob(<span class="hljs-string">"bin/**/*"</span>) + <span class="hljs-string">%w[README.md LICENSE.txt CHANGELOG.md]</span>
   <span class="hljs-comment"># ...</span>
 <span class="hljs-keyword">end</span>
 </code></pre>
