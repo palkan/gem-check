@@ -44,6 +44,7 @@
     "CI",
     "rbspy",
     "setup",
-    "StandardRB"
+    "StandardRB",
+    "Ractor"
   ]
 }
