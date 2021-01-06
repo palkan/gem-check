@@ -253,52 +253,57 @@ You don’t need the whole <code>active_support</code> if you only need a couple
 <p>There is more than one major <a href="https://en.wikipedia.org/wiki/Ruby_(programming_language)#Alternate_implementations">Ruby implementation</a>, and at least three popular: MRI, <a href="http://jruby.org">JRuby</a> and <a href="https://rubinius.com">Rubinius</a> (and <a href="https://github.com/graalvm/truffleruby">TruffleRuby</a> is coming). The fact that MRI is much more popular than others does not mean you should ditch the rest.</p>
 <p><a href="https://github.com/ruby-concurrency/concurrent-ruby">Concurrent Ruby</a> is an excellent example of interoperability.</p>
 <p>You should at least provide the information whether other platforms are supported or not (just add them to your CI and check–that’s easy!).</p>
+<ul>
+<li><input type="checkbox" id="checkbox17"><label for="checkbox17">Use as less shared state as possible, or be </label><em>Ractor-compatible</em></li>
+</ul>
+<p><a href="https://docs.ruby-lang.org/en/3.0.0/doc/ractor_md.html">Ractor</a> is a new addition to Ruby 3.0. It brings real parallelism to Ruby. However, it has some <a href="https://docs.ruby-lang.org/en/3.0.0/doc/ractor_md.html#label-Language+changes+to+isolate+unshareable+objects+between+Ractors">limitations</a>: for example, class  and global variables couldn’t be accessible from non-main Ractors.</p>
+<p>Try to avoid having shared state in globals, class or class instance variables, so your code could be used in Ractors.</p>
 <h2>Documents</h2>
 <blockquote>
 <p>A program is only as good as its documentation. –Joe Armstrong</p>
 </blockquote>
 <ul>
-<li><input type="checkbox" id="checkbox17"><label for="checkbox17">Provide at least one form of documentation</label></li>
+<li><input type="checkbox" id="checkbox18"><label for="checkbox18">Provide at least one form of documentation</label></li>
 </ul>
 <p>It is not always necessary to write a book, or even RDocs: <em>well-written</em> Readme could be sufficient (see <a href="https://github.com/matiassingers/awesome-readme">awesome-readme</a> for examples).</p>
 <p><em>Provide benchmarks</em> in any form if your library is more performant than others (at least, tell users how much memory/CPU/time can be saved with your solution).</p>
 <ul>
-<li><input type="checkbox" id="checkbox18"><label for="checkbox18">Write docs in style</label></li>
+<li><input type="checkbox" id="checkbox19"><label for="checkbox19">Write docs in style</label></li>
 </ul>
 <p>Your documentation contains a lot of code examples? Make sure their have correct syntax and consistent style.
 For example, for Ruby snippets you can use <a href="https://github.com/palkan/rubocop-md"><code>rubocop-md</code></a>.</p>
 <p>And don’t forget about the language! We use <a href="https://github.com/ai/yaspeller-ci">yaspeller-ci</a> for that.</p>
 <ul>
-<li><input type="checkbox" id="checkbox19"><label for="checkbox19">Provide examples for both simple and complex scenarios</label></li>
+<li><input type="checkbox" id="checkbox20"><label for="checkbox20">Provide examples for both simple and complex scenarios</label></li>
 </ul>
 <p>A good example is much better than documentation.</p>
 <p>Provide code snippets, Wiki pages for specific scenarios–just show people how you are using your own code!</p>
 <ul>
-<li><input type="checkbox" id="checkbox20"><label for="checkbox20">Explain how you wrote the code</label></li>
+<li><input type="checkbox" id="checkbox21"><label for="checkbox21">Explain how you wrote the code</label></li>
 </ul>
 <p>There are several reasons for that: sharing knowledge and helping others to contribute and debug potential problems easily.</p>
 <p>See this great example from <a href="https://github.com/rbspy/rbspy/blob/master/ARCHITECTURE.md">rbspy</a>.</p>
 <ul>
-<li><input type="checkbox" id="checkbox21"><label for="checkbox21">Show the current state of the project</label></li>
+<li><input type="checkbox" id="checkbox22"><label for="checkbox22">Show the current state of the project</label></li>
 </ul>
 <p>It should be clear to users what is the current state of the project and which versions of software (the language itself, dependencies) are supported (you can use badges in your Readme).</p>
 <ul>
-<li><input type="checkbox" id="checkbox22"><label for="checkbox22">Use semantic versioning</label></li>
+<li><input type="checkbox" id="checkbox23"><label for="checkbox23">Use semantic versioning</label></li>
 </ul>
 <p>Help your users to easily upgrade without thinking about breaking changes. For example, you can follow <a href="http://semver.org">SemVer</a> rules, or use your own <em>semantics</em> (just don’t forget to explain it to your users).</p>
 <ul>
-<li><input type="checkbox" id="checkbox23"><label for="checkbox23">Use deprecation messages prior to introducing breaking changes</label></li>
+<li><input type="checkbox" id="checkbox24"><label for="checkbox24">Use deprecation messages prior to introducing breaking changes</label></li>
 </ul>
 <p>See, for example, how <a href="https://github.com/rails/rails/blob/v5.2.0.beta2/railties/lib/rails/commands/server/server_command.rb#L29">Rails</a> do that.</p>
 <ul>
-<li><input type="checkbox" id="checkbox24"><label for="checkbox24">Keep a changelog</label></li>
+<li><input type="checkbox" id="checkbox25"><label for="checkbox25">Keep a changelog</label></li>
 </ul>
 <p>Wondering why? Just read the <a href="http://keepachangelog.com/">keepchangelog.com</a>.</p>
 <p>Looking for an automation? Take a look at <a href="https://github.com/skywinder/github-changelog-generator"><code>github-changelog-generator</code></a> and <a href="https://github.com/egoist/loglive"><code>loglive</code></a>.</p>
 <p>Your commits history is also a kind of changelog, so, use meaningful messages (<a href="https://github.com/bkuhlmann/git-cop"><code>git-cop</code></a> can help you with it).</p>
 <p>Keeping release notes (e.g. through <a href="https://help.github.com/articles/creating-releases/">GitHub Releases</a>) is also a good idea. You can automate release notes generation with <a href="https://github.com/toolmantim/release-drafter">Release Drafter</a>.</p>
 <ul>
-<li><input type="checkbox" id="checkbox25"><label for="checkbox25">Provide upgrade notes</label></li>
+<li><input type="checkbox" id="checkbox26"><label for="checkbox26">Provide upgrade notes</label></li>
 </ul>
 <p>Make the process of upgrading less painful.</p>
 <p>See, for example, <a href="http://hanamirb.org/guides/1.1/upgrade-notes/v100/">Hanami</a>.</p>
@@ -308,18 +313,18 @@ For example, for Ruby snippets you can use <a href="https://github.com/palkan/ru
 <p>OSS that stops evolution gradually dies. –Matz</p>
 </blockquote>
 <ul>
-<li><input type="checkbox" id="checkbox26"><label for="checkbox26">Keep code up to date with related technologies</label></li>
+<li><input type="checkbox" id="checkbox27"><label for="checkbox27">Keep code up to date with related technologies</label></li>
 </ul>
 <p>Try to prevent compatibility issues by monitoring dependencies upgrades (<a href="https://depfu.io">Depfu</a> or <a href="https://dependabot.com">Dependabot</a> could help here).</p>
 <p>Run your tests against <code>ruby-head</code>, Rails <code>master</code>, whatever–just add it to your CI, it’s easy!</p>
 <ul>
-<li><input type="checkbox" id="checkbox27"><label for="checkbox27">Make development process less painful</label></li>
+<li><input type="checkbox" id="checkbox28"><label for="checkbox28">Make development process less painful</label></li>
 </ul>
 <p>Sooner or later people will try to contribute to your work. Is your development process transparent, or does it require a lot of effort to setup?</p>
 <p>For example, Rails has a <a href="https://github.com/rails/rails-dev-box"><code>rails-dev-box</code></a> to help you start developing easily.</p>
 <p><a href="https://www.docker.com">Docker</a> is also a good way to make dependency management simpler.</p>
 <ul>
-<li><input type="checkbox" id="checkbox28"><label for="checkbox28">Update your version on RubyGems in time</label></li>
+<li><input type="checkbox" id="checkbox29"><label for="checkbox29">Update your version on RubyGems in time</label></li>
 </ul>
 <p>Keep version of a gem at <a href="https://rubygems.org/">RubyGems</a> up-to-date with your main repository releases.</p>
 <p>When should I bump a version?</p>
@@ -334,7 +339,7 @@ For example, for Ruby snippets you can use <a href="https://github.com/palkan/ru
 <p>It’s a good practice to publish RC/beta versions prior to releasing a major update.</p>
 <p>You can automate your release process by using, for example, <a href="https://github.com/bkuhlmann/gemsmith"><code>gemsmith</code></a> / <a href="https://github.com/svenfuchs/gem-release"><code>gem-release</code></a> or CI services (e.g. <a href="https://docs.travis-ci.com/user/deployment/rubygems/">Travis supports</a> RubyGems deployments).</p>
 <ul>
-<li><input type="checkbox" id="checkbox29"><label for="checkbox29">Don’t let your gem bloat</label></li>
+<li><input type="checkbox" id="checkbox30"><label for="checkbox30">Don’t let your gem bloat</label></li>
 </ul>
 <p>While it makes a great sense to add to your repository as more documentation and examples as possible, have a huge test suite and development
 guides, it’s better not to include this unrelated data to the final package. Be reasonable about your gem content.
