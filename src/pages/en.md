@@ -272,6 +272,12 @@ There is more than one major [Ruby implementation](https://en.wikipedia.org/wiki
 
 You should at least provide the information whether other platforms are supported or not (just add them to your CI and check–that's easy!).
 
+- [ ] Use as less shared state as possible, or be _Ractor-compatible_
+
+[Ractor](https://docs.ruby-lang.org/en/3.0.0/doc/ractor_md.html) is a new addition to Ruby 3.0. It brings real parallelism to Ruby. However, it has some [limitations](https://docs.ruby-lang.org/en/3.0.0/doc/ractor_md.html#label-Language+changes+to+isolate+unshareable+objects+between+Ractors): for example, class  and global variables couldn't be accessible from non-main Ractors.
+
+Try to avoid having shared state in globals, class or class instance variables, so your code could be used in Ractors.
+
 ## Documents
 
 > A program is only as good as its documentation. –Joe Armstrong
